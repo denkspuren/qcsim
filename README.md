@@ -2,6 +2,12 @@
 
 In diesem Repo finden Sie einen Simulator für Quantenschaltungen, den ich in der Veranstaltung "Quantencomputing" an der Technischen Hochschule Mittelhessen (THM) einsetze.
 
+Um beispielsweise ein Notebook aus einem anderen Notbooks heraus mit `%run` auszuführen, muss das Paket `nbformat` installiert sein.
+
+```
+pip3 install nbformat
+```
+
 Beiträge sind gerne willkommen!
 
 Ideen zur Ergänzung/Erweiterung:
