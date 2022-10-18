@@ -42,23 +42,23 @@ sealed interface ComplexNumber permits ComplexNumberAlgebraic, ComplexNumberPola
 
 record ComplexNumberAlgebraic(double real, double imag) implements ComplexNumber {
 
-    public ComplexNumber add(ComplexNumber other) {
+    public ComplexNumberAlgebraic add(ComplexNumber other) {
         return new ComplexNumberAlgebraic(real + other.algebraic().real(),
                                           imag + other.algebraic().imag());
     }
-    public ComplexNumber neg() {
+    public ComplexNumberAlgebraic neg() {
         return new ComplexNumberAlgebraic(-real, -imag);
     }
-    public ComplexNumber mul(ComplexNumber other) {
-        return conv().mul(other).conv();
+    public ComplexNumberAlgebraic mul(ComplexNumber other) {
+        return polar().mul(other).algebraic();
     }
-    public ComplexNumber inv() {
-        return conv().inv().conv();
+    public ComplexNumberAlgebraic inv() {
+        return polar().inv().algebraic();
     }
-    public ComplexNumber conj() {
+    public ComplexNumberAlgebraic conj() {
         return new ComplexNumberAlgebraic(real, -imag);
     }
-    public ComplexNumber conv() {
+    public ComplexNumberPolar conv() {
         return polar();
     }
     public ComplexNumberAlgebraic algebraic() {
@@ -72,22 +72,22 @@ record ComplexNumberAlgebraic(double real, double imag) implements ComplexNumber
 }
 
 record ComplexNumberPolar(double r, double phi) implements ComplexNumber {
-    public ComplexNumber add(ComplexNumber other) {
-        return conv().add(other).conv();
+    public ComplexNumberPolar add(ComplexNumber other) {
+        return algebraic().add(other).polar();
     }
-    public ComplexNumber neg() {
-        return conv().neg().conv();
+    public ComplexNumberPolar neg() {
+        return algebraic().neg().polar();
     }
-    public ComplexNumber mul(ComplexNumber other) {
+    public ComplexNumberPolar mul(ComplexNumber other) {
         return new ComplexNumberPolar(r * other.polar().r(), phi + other.polar().phi());
     }
-    public ComplexNumber inv() {
+    public ComplexNumberPolar inv() {
         return new ComplexNumberPolar(1/r, -phi);
     }
-    public ComplexNumber conj() {
+    public ComplexNumberPolar conj() {
         return new ComplexNumberPolar(r, -phi);
     }
-    public ComplexNumber conv() {
+    public ComplexNumberAlgebraic conv() {
         return algebraic();
     }
     public ComplexNumberAlgebraic algebraic() {
