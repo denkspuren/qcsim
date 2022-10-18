@@ -1,23 +1,10 @@
 // Calculating with Complex Number
 // Demonstration of Conceptual Programming (CP)
-// My understanding of CP is captured by the following ideas and principles.
-// Idea:
-// * CP models a domain by exposing key concepts and their relations
-// * The type system is used ...
-//   - to capture important domain concepts and their dependencies
-//   - to reflect the conceptual design
-// * The code tells a consistent and coherent narrative
-// * The narrative explicates the domain model
-// Principles:
-// * Concepts being simple and clear
-// * Understandability over effectiveness
-// * Exploit symmetry, avoid redundancy
-// * Code represents an explanatory narrative
-//
+
 // For execution type:
-// `jshell -R-ea -enable-preview`
-// For more detailed type checking messages use:
-// `java --source 19 --enable-preview <filename>.java`
+// `jshell -R-ea <filename>.java`
+// For more detailed type checking messages while developing use:
+// `java <filename>.java`
 //
 // TODO: Test code
 // TODO: Normalize phi for a certain range
