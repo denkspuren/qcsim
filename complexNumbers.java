@@ -10,6 +10,7 @@
 // * Concepts being simple and clear
 // * Understandability over effectiveness
 // * Exploit symmetry, avoid redundancy
+// * Code represents an explanatory narrative
 //
 // For execution type:
 // `jshell -R-ea -enable-preview`
@@ -19,6 +20,7 @@
 // TODO: Test code
 // TODO: Normalize phi for a certain range
 // TODO: Equality
+// TODO: Check type consistency when sub/mul is used
 
 sealed interface ComplexNumber permits ComplexNumberAlgebraic, ComplexNumberPolar {
     static double epsilon = 1E-9;
@@ -30,10 +32,10 @@ sealed interface ComplexNumber permits ComplexNumberAlgebraic, ComplexNumberPola
     }
     ComplexNumber add(ComplexNumber other);
     ComplexNumber neg();
-    default ComplexNumber sub(ComplexNumber other) { return add(other.neg()); }
+    ComplexNumber sub(ComplexNumber other);
     ComplexNumber mul(ComplexNumber other);
     ComplexNumber inv();
-    default ComplexNumber div(ComplexNumber other) { return mul(other.inv()); }
+    ComplexNumber div(ComplexNumber other);
     ComplexNumber conj();
     ComplexNumber conv();
     ComplexNumberPolar polar();
@@ -49,11 +51,17 @@ record ComplexNumberAlgebraic(double real, double imag) implements ComplexNumber
     public ComplexNumberAlgebraic neg() {
         return new ComplexNumberAlgebraic(-real, -imag);
     }
+    public ComplexNumberAlgebraic sub(ComplexNumber other) {
+        return add(other.neg());
+    }
     public ComplexNumberAlgebraic mul(ComplexNumber other) {
         return polar().mul(other).algebraic();
     }
     public ComplexNumberAlgebraic inv() {
         return polar().inv().algebraic();
+    }
+    public ComplexNumberAlgebraic div(ComplexNumber other) {
+        return polar().div(other).algebraic();
     }
     public ComplexNumberAlgebraic conj() {
         return new ComplexNumberAlgebraic(real, -imag);
@@ -78,11 +86,18 @@ record ComplexNumberPolar(double r, double phi) implements ComplexNumber {
     public ComplexNumberPolar neg() {
         return algebraic().neg().polar();
     }
+    public ComplexNumberPolar sub(ComplexNumber other) {
+        return algebraic().sub(other).polar();
+    }
     public ComplexNumberPolar mul(ComplexNumber other) {
-        return new ComplexNumberPolar(r * other.polar().r(), phi + other.polar().phi());
+        return new ComplexNumberPolar(r * other.polar().r(),
+                                      phi + other.polar().phi());
     }
     public ComplexNumberPolar inv() {
         return new ComplexNumberPolar(1/r, -phi);
+    }
+    public ComplexNumberPolar div(ComplexNumber other) {
+        return mul(other.inv());
     }
     public ComplexNumberPolar conj() {
         return new ComplexNumberPolar(r, -phi);
@@ -99,3 +114,18 @@ record ComplexNumberPolar(double r, double phi) implements ComplexNumber {
         return this;
     }
 }
+
+/*
+ Note:
+ 
+ Default implementations break type consistency. A complex number is returned
+ as a type and not a specific form.
+
+```java
+sealed interface ComplexNumber permits ComplexNumberAlgebraic, ComplexNumberPolar {
+    default ComplexNumber sub(ComplexNumber other) { return add(other.neg()); }
+    default ComplexNumber div(ComplexNumber other) { return mul(other.inv()); }
+    // Rest of code
+}
+```
+ */
