@@ -32,12 +32,12 @@ sealed interface ComplexNumber permits ComplexNumberAlgebraic, ComplexNumberPola
     static boolean isAlmostEqual(double a, double b) {
         return isAlmostEqual(a, b, ComplexNumber.epsilon);
     }
-    ComplexNumber add(ComplexNumber other);
+    ComplexNumber add(ComplexNumber z);
     ComplexNumber neg();
-    ComplexNumber sub(ComplexNumber other);
-    ComplexNumber mul(ComplexNumber other);
+    ComplexNumber sub(ComplexNumber z);
+    ComplexNumber mul(ComplexNumber z);
     ComplexNumber inv();
-    ComplexNumber div(ComplexNumber other);
+    ComplexNumber div(ComplexNumber z);
     ComplexNumber conj();
     ComplexNumber conv();
     ComplexNumberPolar polar();
