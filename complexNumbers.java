@@ -6,6 +6,8 @@
 // * The type system is used ...
 //   - to capture important domain concepts and their dependencies
 //   - to reflect the conceptual design
+// * The code tells a consistent and coherent narrative
+// * The narrative explicates the domain model
 // Principles:
 // * Concepts being simple and clear
 // * Understandability over effectiveness
