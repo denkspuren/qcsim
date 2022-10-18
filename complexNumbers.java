@@ -17,7 +17,7 @@
 // `java --source 19 --enable-preview <filename>.java`
 //
 // TODO: Test code
-// TODO: Norm phi for a certain range
+// TODO: Normalize phi for a certain range
 // TODO: Equality
 
 sealed interface ComplexNumber permits ComplexNumberAlgebraic, ComplexNumberPolar {
