@@ -36,17 +36,15 @@ sealed interface ComplexNumber permits ComplexNumberAlgebraic, ComplexNumberPola
     default ComplexNumber div(ComplexNumber other) { return mul(other.inv()); }
     ComplexNumber conj();
     ComplexNumber conv();
-    ComplexNumber polar();
-    ComplexNumber algebraic();
+    ComplexNumberPolar polar();
+    ComplexNumberAlgebraic algebraic();
 }
 
 record ComplexNumberAlgebraic(double real, double imag) implements ComplexNumber {
 
     public ComplexNumber add(ComplexNumber other) {
-        return switch (other) {
-            case ComplexNumberAlgebraic c -> new ComplexNumberAlgebraic(real + c.real, imag + c.imag);
-            case ComplexNumberPolar c -> add(c.conv());
-        };
+        return new ComplexNumberAlgebraic(real + other.algebraic().real(),
+                                          imag + other.algebraic().imag());
     }
     public ComplexNumber neg() {
         return new ComplexNumberAlgebraic(-real, -imag);
@@ -63,10 +61,10 @@ record ComplexNumberAlgebraic(double real, double imag) implements ComplexNumber
     public ComplexNumber conv() {
         return polar();
     }
-    public ComplexNumber algebraic() {
+    public ComplexNumberAlgebraic algebraic() {
         return this;
     }
-    public ComplexNumber polar() {
+    public ComplexNumberPolar polar() {
         double r = Math.sqrt(real * real + imag * imag);
         double phi = Math.atan2(imag, real);
         return new ComplexNumberPolar(r, phi);
@@ -81,10 +79,7 @@ record ComplexNumberPolar(double r, double phi) implements ComplexNumber {
         return conv().neg().conv();
     }
     public ComplexNumber mul(ComplexNumber other) {
-        return switch (other) {
-            case ComplexNumberPolar cn -> new ComplexNumberPolar(r * cn.r, phi + cn.phi);
-            case ComplexNumberAlgebraic cn -> mul(cn.conv());
-        };
+        return new ComplexNumberPolar(r * other.polar().r(), phi + other.polar().phi());
     }
     public ComplexNumber inv() {
         return new ComplexNumberPolar(1/r, -phi);
@@ -95,12 +90,12 @@ record ComplexNumberPolar(double r, double phi) implements ComplexNumber {
     public ComplexNumber conv() {
         return algebraic();
     }
-    public ComplexNumber algebraic() {
+    public ComplexNumberAlgebraic algebraic() {
         double real = Math.cos(phi) * r;
         double imag = Math.sin(phi) * r;
         return new ComplexNumberAlgebraic(real, imag);
     }
-    public ComplexNumber polar() {
+    public ComplexNumberPolar polar() {
         return this;
     }
 }
