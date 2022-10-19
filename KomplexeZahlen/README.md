@@ -20,7 +20,7 @@ Unter konzeptuellem Programmieren (_Conceptional Programming_) verstehe ich folg
 
 Das CP wird hier am Beispiel der Umsetzung des Rechnens mit komplexen Zahlen demonstriert und diskutiert.
 
-## `complexNumbers.java`
+## `ComplexNumberFormClasses.java`
 
 Das war mein erster Versuch, das Konzept der komplexen Zahlen zu fassen. Ich habe dafür auf das Sprachfeature der "sealed Interfaces" zurückgegriffen. Der Code liefert also zudem ein Beispiel für den Gebrauch des neuen Sprachkonstrukts.
 
@@ -28,7 +28,7 @@ Der Code erzählt das Narrativ, dass es zwei unterschiedliche Formen gibt, mit d
 
 Dadurch, dass die Repräsentation die Konzeptwelt prägt, kommt es zu der Notwendigkeit, in beiden Konzeptklassen das Interface zu implementieren. Um konzeptuell den Code auf die Addition und die Multiplikation zurückzuführen, führt das beim Anspruch, die Form zu erhalten, zu einigen Konvertierungen zwischen Polar- und algebraischer Form. So narrativ der Code ist, er erzählt mehr als nötig und wirkt "aufgeblasen".
 
-## `ComplexNumber.java`
+## `ComplexNumberFormEnum.java`
 
 Dieser Code geht mit der Klasse `ComplexNumber` von einem anderen Verständnis aus: Eine komplexe Zahl ist eine komplexe Zahl. Man kann sie entweder durch einen Real- und Imaginärteil beschreiben oder durch einen Radius und einen Winkel. Das sind nur verschiedene Formen, die komplexe Zahl zu beschreiben, aber keine grundsätzlichen Repräsentationsformen. Und das hat deutliche Konsequenzen, der Code wird kompakter ohne dabei die Eigenschaft zu verlieren, in welcher Form eine Rechenoperation durchgeführt wird.
 
