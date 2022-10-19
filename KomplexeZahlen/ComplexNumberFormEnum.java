@@ -1,4 +1,14 @@
-// CODE NOT TESTED
+// Calculating with Complex Number
+// Demonstration of Conceptual Programming (CP)
+//
+// For execution type:
+// `jshell -R-ea <filename>.java`
+// For more detailed type checking messages while developing use:
+// `java <filename>.java`
+//
+// TODO: Test code
+// TODO: Normalize phi for a certain range
+// TODO: Implements equals
 
 enum Form { ALGEBRAIC, POLAR; }
 

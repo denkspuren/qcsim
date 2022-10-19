@@ -8,8 +8,7 @@
 //
 // TODO: Test code
 // TODO: Normalize phi for a certain range
-// TODO: Equality
-// TODO: Check type consistency when sub/mul is used
+// TODO: Implements equals
 
 sealed interface ComplexNumber permits ComplexNumberAlgebraic, ComplexNumberPolar {
     static double epsilon = 1E-9;
@@ -103,18 +102,3 @@ record ComplexNumberPolar(double r, double phi) implements ComplexNumber {
         return this;
     }
 }
-
-/*
- Note:
- 
- Default implementations break type consistency. A complex number is returned
- as a type and not a specific form.
-
-```java
-sealed interface ComplexNumber permits ComplexNumberAlgebraic, ComplexNumberPolar {
-    default ComplexNumber sub(ComplexNumber other) { return add(other.neg()); }
-    default ComplexNumber div(ComplexNumber other) { return mul(other.inv()); }
-    // Rest of code
-}
-```
- */
