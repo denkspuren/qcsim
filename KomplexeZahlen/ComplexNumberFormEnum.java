@@ -54,8 +54,8 @@ record ComplexNumber(double a, double b, Form form) { // implements ComplexNumbe
     public ComplexNumber conj() {
         return new ComplexNumber(real(), -imag(), Form.ALGEBRAIC);
     }
-    double r() { return polar().a(); }
-    double phi() { return polar().b(); }
-    double real() { return algebraic().a(); }
-    double imag() { return algebraic().b(); }
+    double r() { return polar().a; }
+    double phi() { return polar().b; }
+    double real() { return algebraic().a; }
+    double imag() { return algebraic().b; }
 }
