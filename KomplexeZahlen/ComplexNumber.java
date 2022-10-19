@@ -30,7 +30,7 @@ record ComplexNumber(double a, double b, Form form) { // implements ComplexNumbe
         return new ComplexNumber(-real(), -imag(), Form.ALGEBRAIC);
     }
     public ComplexNumber sub(ComplexNumber z) {
-        return add(z.neg());
+        return new ComplexNumber(real() - z.real(), imag() - z.imag(), Form.ALGEBRAIC);
     }
     public ComplexNumber mul(ComplexNumber z) {
         return new ComplexNumber(r() * z.r(), phi() + z.phi(), Form.POLAR);
@@ -39,7 +39,7 @@ record ComplexNumber(double a, double b, Form form) { // implements ComplexNumbe
         return new ComplexNumber(1 / r(), -phi(), Form.POLAR);
     }
     public ComplexNumber div(ComplexNumber z) {
-        return mul(z.inv());
+        return new ComplexNumber(r() / z.r(), phi() - z.phi(), Form.POLAR);
     }
     public ComplexNumber conj() {
         return new ComplexNumber(real(), -imag(), Form.ALGEBRAIC);
