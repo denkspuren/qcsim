@@ -21,7 +21,7 @@ sealed interface ComplexNumber permits ComplexNumberAlgebraic, ComplexNumberPola
         return polar().mul(z.polar());
     }
     default ComplexNumber div(ComplexNumber z) {
-        return polar().mul(z.polar());
+        return polar().div(z.polar());
     }
     default ComplexNumber neg() {
         return algebraic().neg();
