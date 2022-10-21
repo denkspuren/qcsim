@@ -1,6 +1,6 @@
 # Werkstatt zum Quantencomputing
 
-In diesem Repo finden Sie Materialien, die ich derzeit für den Kurs "Einführung in das Quantencomputing" an der Technischen Hochschule Mittelhessen entwickle und erstelle.
+In diesem Repo finden Sie Materialien, die ich im Sommersemester 2022 für den Kurs "Einführung in das Quantencomputing" an der Technischen Hochschule Mittelhessen entwicklte und erstellte und jetzt für meinen Kurs "Simulation von Quantencomputern und ihren Grundlagen" im Wintersemester 2022/23 fortführe.
 
 ## Was ist ein Quantenbit?
 
