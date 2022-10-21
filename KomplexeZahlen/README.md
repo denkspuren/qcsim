@@ -62,3 +62,18 @@ In der Datei `ComplexNumberFormEnum.java` ist das anders gelöst. Zwar ist eine 
 Welche dieser beiden Varianten ist die bessere? Ich habe in einer früheren Version dieses Textes die Variante mit der Aufzählungsklasse `Form` als die bessere dargestellt. Dabei bin ich einer Fehleinschätzung aufgesessen, weil der Code in `ComplexNumberFormClasses.java` länger und umständlicher war. Mittlerweile habe ich den Code kompakter machen können, womit der Vergleich "fairer" ausfällt. Meine Umsetzung von `ComplexNumberFormEnum.java` (derzeit ohne Interface) hat mir den Weg gezeigt, wie ich auch die andere Variante kürzer umsetzen kann. Und `ComplexNumberFormEnum.java` wäre nicht ohne meine Anfangsarbeiten an `ComplexNumberFormClasses.java` denkbar gewesen. So hat die eine Umsetzung die andere beeinflusst. Wie ich schon oft feststellen musste, bedarf es oft mehrerer Iterationen, bis vergleichbare Konzeptdichten erreicht werden. Das hängt natürlich wesentlich davon ob, welche Sprachkonstrukte eine Programmiersprache anbietet und wie gut man sich im Umgang mit ihnen versteht. Längerer und umständlicherer Code muss konzeptuell nicht der schlechtere sein. Es bleibt also stets das Bemühen, Konzeptprogrammierung auch in den Ausdrucksmitteln dicht und kompakt mit den gegebenen Mitteln einer Programmiersprache hinzubekommen.
 
 Beide Varianten halte ich, bis zur argumentativen Widerlegung, als gleichwertig gute Umsetzungen des Konzeptdesigns von komplexen Zahlen.
+
+**Ein Nachtrag**: Ich erhielt die Frage, ob man bei `ComplexNumberFormEnum.java` in der Methode zur Conjugation nicht einfach hätte das Folgende schreiben können:
+
+```java
+    public ComplexNumber conj() {
+        return new ComplexNumber(a, -b, form);
+    }
+```
+
+Die Argumentation: Das würde deutlich machen, dass beide Formen strukturell gleich arbeiten.
+
+Ich sehe das nicht so und widerspreche. Mit den beiden Formen sind unterschiedliche Semantiken (Bedeutungen) verbunden. Die vermeintliche strukturelle Ähnlichkeit ist einer zufälligen Fügung in der Art der Kodierung mit `a` und `b` geschuldet. Angenommen, für die Polarform hätte ich `r` mit `b` und `phi` mit `a` assoziiert -- schon wäre die obige Code-Idee gebrochen.
+
+Und noch ein Argument lässt sich anführen, wenn man eine alternative Konzeptumsetzung hat. In `ComplexNumberFormClasses` wäre dieser "Trick" undenkbar. Das hebt noch einmal hervor, dass der Übergang von einer durch zwei Klassen veräußerten Form zu einer die Formkodierung verinnerlichenden Einzelklasse zwar die Möglichkeiten bietet, Code "zu vereinfachen", konzeptuell ist das aber nicht vorgesehen. Sonst müsste es auch für `ComplexNumberFormClasses` eine solche Lösung geben.
+
