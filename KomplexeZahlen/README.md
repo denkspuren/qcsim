@@ -5,6 +5,7 @@ Unter konzeptuellem Programmieren (_Conceptional Programming_) verstehe ich folg
 > My understanding of CP is captured by the following idea and the following principles.
 >
 > Idea:
+>
 > * CP models a domain by exposing key concepts and their relations
 > * The type system is used ...
 >   - to capture important domain concepts and their dependencies
@@ -13,6 +14,7 @@ Unter konzeptuellem Programmieren (_Conceptional Programming_) verstehe ich folg
 > * The narrative explicates the domain model
 > 
 > Principles:
+>
 > * Concepts are simple and clear
 > * Understandability over effectiveness
 > * Exploit symmetry, avoid redundancy
