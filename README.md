@@ -2,6 +2,12 @@
 
 In diesem Repo finden Sie Materialien, die ich im Sommersemester 2022 für den Kurs "Einführung in das Quantencomputing" an der Technischen Hochschule Mittelhessen entwicklte und erstellte und jetzt für meinen Kurs "Simulation von Quantencomputern und ihren Grundlagen" im Wintersemester 2022/23 fortführe.
 
+## Vorwissen: Komplexe Zahlen
+
+Es ist an und für sich schon interessant, dass die Quantentheorie ohne komplexe Zahlen nicht auskommt. In der Schule lernt man die natürlichen Zahlen (die Zählzahlen 0, 1, 2, 3 usw.), die ganzen Zahlen (positive und negative Zahlen), die rationalen Zahlen (Brüche) und die reellen Zahlen ("Kommazahlen") kennen. Aber "die Natur" scheint mit komplexen Zahlen zu rechnen. Ein paar Codeskizzen zu komplexen Zahlen finden sich hier unter:
+
+https://github.com/denkspuren/qcsim/tree/main/KomplexeZahlen
+
 ## Was ist ein Quantenbit?
 
 Podcast-Episode: ["QC: Was ist ein Quantenbit?"](https://open.spotify.com/episode/4dR2kKoEpY52U0PnYGSb4S?si=2ApYJfAjQ-y4Hk-GzYO3eg)
