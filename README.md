@@ -8,6 +8,14 @@ Es ist an und für sich schon interessant, dass die Quantentheorie ohne komplexe
 
 https://github.com/denkspuren/qcsim/tree/main/KomplexeZahlen
 
+## Schrödingers Wellengleichung
+
+Schrödingers Wellengleichung bietet sich zur Simulation an. Sie bringt faszinierende Bilder hervor, die so anschaulich den Möglichkeitsraum visualieren können, wo und wann in Zeit und Raum sich ein Quantenphänomen materialisieren könnte.
+
+https://github.com/denkspuren/qcsim/blob/main/Wellengleichung/Schr%C3%B6dingersWellengleichung.ipynb
+
+(Dieses Verzeichnis ist aktuell in Bearbeitung und noch nicht fertig.)
+
 ## Was ist ein Quantenbit?
 
 Podcast-Episode: ["QC: Was ist ein Quantenbit?"](https://open.spotify.com/episode/4dR2kKoEpY52U0PnYGSb4S?si=2ApYJfAjQ-y4Hk-GzYO3eg)
