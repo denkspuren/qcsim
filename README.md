@@ -2,6 +2,20 @@
 
 In diesem Repo finden Sie Materialien, die ich im Sommersemester 2022 für den Kurs "Einführung in das Quantencomputing" an der Technischen Hochschule Mittelhessen entwicklte und erstellte und jetzt für meinen Kurs "Simulation von Quantencomputern und ihren Grundlagen" im Wintersemester 2022/23 fortführe.
 
+## Vorwissen: Komplexe Zahlen
+
+Es ist an und für sich schon interessant, dass die Quantentheorie ohne komplexe Zahlen nicht auskommt. In der Schule lernt man die natürlichen Zahlen (die Zählzahlen 0, 1, 2, 3 usw.), die ganzen Zahlen (positive und negative Zahlen), die rationalen Zahlen (Brüche) und die reellen Zahlen ("Kommazahlen") kennen. Aber "die Natur" scheint mit komplexen Zahlen zu rechnen. Ein paar Codeskizzen zu komplexen Zahlen finden sich hier unter:
+
+https://github.com/denkspuren/qcsim/tree/main/KomplexeZahlen
+
+## Schrödingers Wellengleichung
+
+Schrödingers Wellengleichung bietet sich zur Simulation an. Sie bringt faszinierende Bilder hervor, die so anschaulich den Möglichkeitsraum visualieren können, wo und wann in Zeit und Raum sich ein Quantenphänomen materialisieren könnte.
+
+https://github.com/denkspuren/qcsim/blob/main/Wellengleichung/Schr%C3%B6dingersWellengleichung.ipynb
+
+(Dieses Verzeichnis ist aktuell in Bearbeitung und noch nicht fertig.)
+
 ## Was ist ein Quantenbit?
 
 Podcast-Episode: ["QC: Was ist ein Quantenbit?"](https://open.spotify.com/episode/4dR2kKoEpY52U0PnYGSb4S?si=2ApYJfAjQ-y4Hk-GzYO3eg)
